@@ -26,12 +26,12 @@ public class ExampleTest {
         System.setOut(originalOut);
     }
 
-
     @Test
-    public void welcomeMsg() {
+    public void welcomeMsgFirstInConsole() {
         String welcomeMsg = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n";
         String[] strings = null;
         BibliotecaApp.main(strings);
         assertEquals(welcomeMsg, outContent.toString());
     }
+
 }

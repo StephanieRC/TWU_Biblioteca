@@ -2,7 +2,9 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
+    String[] books = {"Catcher in the Rye", "The Great Gatesby"};
+
     public static void main(String[] args) {
-        System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
+
     }
 }
