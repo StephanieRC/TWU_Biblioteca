@@ -2,9 +2,11 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
-    String[] books = {"Catcher in the Rye", "The Great Gatesby"};
-
     public static void main(String[] args) {
-
+        System.out.println("hey jonah");
+        /*print welcome message
+        * print mentu
+        * wait for response
+        * run respnse through menu function*/
     }
 }

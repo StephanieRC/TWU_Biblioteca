@@ -6,7 +6,7 @@ public class Books {
 
     ArrayList<Book> books = new ArrayList<Book>();
 
-    public Books(ArrayList<Book> books){
+    public Books(){
         this.books.addAll(books);
     }
 
@@ -14,7 +14,7 @@ public class Books {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     }
 
-    public String getStringOfBooks(){
+    public String toString(){
         String strOfBooks = "";
         for (Book book : books){
             strOfBooks = strOfBooks + book.toString() + "\n";

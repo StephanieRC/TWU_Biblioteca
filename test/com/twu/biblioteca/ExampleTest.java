@@ -9,7 +9,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.*;
 
 public class ExampleTest {
 
@@ -26,6 +28,7 @@ public class ExampleTest {
         System.setOut(originalOut);
     }
 
+    /*
     @Test
     public void welcomeMsgFirstInConsole() {
         String welcomeMsg = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n";
@@ -33,5 +36,6 @@ public class ExampleTest {
         BibliotecaApp.main(strings);
         assertEquals(welcomeMsg, outContent.toString());
     }
+    */
 
 }
