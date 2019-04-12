@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Books {
 
-    ArrayList<String> books = new ArrayList<String>();
+    ArrayList<Book> books = new ArrayList<Book>();
 
-    public Books(ArrayList<String> books){
+    public Books(ArrayList<Book> books){
         this.books.addAll(books);
     }
 
@@ -16,10 +16,9 @@ public class Books {
 
     public String getStringOfBooks(){
         String strOfBooks = "";
-        for (String book : books){
-            strOfBooks = strOfBooks + book + ", ";
+        for (Book book : books){
+            strOfBooks = strOfBooks + book.toString() + "\n";
         }
-        strOfBooks = strOfBooks.substring(0, strOfBooks.length()-2);
-        return strOfBooks;
+        return strOfBooks.trim();
     }
 }

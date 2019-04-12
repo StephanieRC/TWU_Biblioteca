@@ -5,12 +5,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
 
 public class BooksTest {
 
-    private String[] arrOfBooks = {"Catcher in the Rye", "Great Gatesby", "Where the wild things are"};
-    private ArrayList<String> bookList= new ArrayList<String>(Arrays.asList(arrOfBooks));
+    private Book[] arrOfBooks = {new Book("name0", "author0", "year0"),
+            new Book("name1", "author1", "year1")};
+    private ArrayList<Book> bookList= new ArrayList<Book>(Arrays.asList(arrOfBooks));
 
     @Test
     public void returnStringWelcomeMsgFunction(){
@@ -19,11 +22,12 @@ public class BooksTest {
         assertEquals(welcomeMsg, books.getWelcomeMsg());
     }
 
+
     @Test
-    public void returnStringOfAllBooks(){
-        String strOfBooks = "Catcher in the Rye, Great Gatesby, Where the wild things are";
+    public void returnStringOfAllBooksInformation(){
         Books books = new Books(bookList);
-        assertEquals(strOfBooks, books.getStringOfBooks());
+        String allInfo = "name0 || author0 || year0\nname1 || author1 || year1";
+        assertThat(books.getStringOfBooks(), is(equalTo(allInfo)));
     }
 
 }
