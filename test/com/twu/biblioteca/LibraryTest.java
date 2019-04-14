@@ -5,21 +5,21 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
 
-public class BooksTest {
+public class LibraryTest {
 
     @Test
     public void returnStringWelcomeMsgFunction(){
         String welcomeMsg = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
-        Books books = new Books();
-        assertEquals(welcomeMsg, books.getWelcomeMsg());
+        Library library = new Library();
+        assertEquals(welcomeMsg, library.getWelcomeMsg());
     }
 
 
     @Test
     public void returnStringOfAllBooksInformation(){
-        Books books = new Books();
+        Library library = new Library();
         String allInfo = "name0 || author0 || year0\nname1 || author1 || year1";
-        assertThat(books.toString(), is(equalTo(allInfo)));
+        assertThat(library.toString(), is(equalTo(allInfo)));
     }
 
 }

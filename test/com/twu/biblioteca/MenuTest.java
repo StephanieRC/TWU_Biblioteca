@@ -11,10 +11,6 @@ import static org.junit.Assert.*;
 
 public class MenuTest {
 
-    private Book[] arrOfBooks = {new Book("name0", "author0", "year0"),
-            new Book("name1", "author1", "year1")};
-    private ArrayList<Book> bookList= new ArrayList<Book>(Arrays.asList(arrOfBooks));
-
     @Test
     public void toString_firstOptionIsListOfBooks(){
         String bookOption = "0 list of books";
@@ -26,7 +22,14 @@ public class MenuTest {
     public void menuSelection_firstOptionIsSelected(){
         Menu menu = new Menu();
         String allInfo = "name0 || author0 || year0\nname1 || author1 || year1";
-        assertThat(menu.menuSelection(0), is(equalTo(allInfo)));
+        assertThat(menu.menuSelection("0"), is(equalTo(allInfo)));
+    }
+
+    @Test
+    public void menuSelection_invalidInputNumberNotOnList(){
+        Menu menu = new Menu();
+        String invalid = "2";
+        assertThat(menu.menuSelection(invalid), is(equalTo("Please enter valid input")));
     }
 
 }

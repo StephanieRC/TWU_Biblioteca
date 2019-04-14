@@ -1,36 +1,30 @@
 package com.twu.biblioteca;
 
-import java.lang.reflect.Array;
-
 public class Menu {
 
     public Menu(){
-
     }
-
-
 
     public String toString(){
         return "0 list of books";
     }
 
-    public String menuSelection(int selection){
+    public String menuSelection(String selection){
+
         String result = new String();
-
-        switch(selection) {
-            case 0:
-                Books shelf = new Books();
-                result = shelf.toString();
+        try{
+            int intSelection = Integer.parseInt(selection.trim());
+            switch(intSelection) {
+                case 0:
+                    Library shelf = new Library();
+                    result = shelf.toString();
+                    break;
+                default:
+                    result = "Please enter valid input";
+            }
+        }catch (NumberFormatException nfe){
+            result = "Please enter valid input";
         }
-
         return result;
     }
-
-    /*
-    * Function menuSelection(int)
-    * {
-    *   0: Books.ListBooks
-    *
-    * }
-    * */
 }
