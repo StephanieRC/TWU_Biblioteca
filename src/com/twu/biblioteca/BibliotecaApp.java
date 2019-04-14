@@ -9,4 +9,11 @@ public class BibliotecaApp {
         * wait for response
         * run respnse through menu function*/
     }
+
+    public boolean quitSelected(String input){
+        if (input == "q"){
+            return true;
+        }
+        return false;
+    }
 }

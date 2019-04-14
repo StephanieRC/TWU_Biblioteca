@@ -38,4 +38,10 @@ public class ExampleTest {
     }
     */
 
+    @Test
+    public void quitSelected_qIsInput(){
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        assertThat(true, is(equalTo(bibliotecaApp.quitSelected("q"))));
+    }
+
 }
