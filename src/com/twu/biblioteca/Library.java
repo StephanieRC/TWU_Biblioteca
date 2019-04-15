@@ -36,4 +36,8 @@ public class Library {
         }
         return "Please enter valid book title";
     }
+
+    public void checkInBook(String name, String author, String year){
+        bookArrayList.add(new Book(name,author,year));
+    }
 }

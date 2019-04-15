@@ -30,4 +30,13 @@ public class LibraryTest {
         assertThat(endResult, is(equalTo(library.toString())));
     }
 
+    @Test
+    public void checkInBook_firstEntryListed(){
+        Library library = new Library();
+        library.checkInBook("name2", "author2", "year2");
+        String endResult = "name0 || author0 || year0\nname1 || author1 || year1\nname2 || author2 || year2";
+        assertThat(endResult, is(equalTo(library.toString())));
+    }
+
+    
 }
