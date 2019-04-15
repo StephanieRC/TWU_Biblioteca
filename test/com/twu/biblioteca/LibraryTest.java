@@ -31,12 +31,22 @@ public class LibraryTest {
     }
 
     @Test
-    public void checkInBook_firstEntryListed(){
+    public void checkInBook_checkInBookIsAddedToLibrary(){
         Library library = new Library();
-        library.checkInBook("name2", "author2", "year2");
+        library.checkInBook("name2");
         String endResult = "name0 || author0 || year0\nname1 || author1 || year1\nname2 || author2 || year2";
         assertThat(endResult, is(equalTo(library.toString())));
     }
 
-    
+    @Test
+    public void checkInBook_successfulCheckIn(){
+        Library library = new Library();
+        assertThat("name2 successfully checked in!", is(equalTo(library.checkInBook("name2"))));
+    }
+
+    @Test
+    public void checkInBook_failCheckIn(){
+        Library library = new Library();
+        assertThat("Does not belong to this library", is(equalTo(library.checkInBook("name"))));
+    }
 }
